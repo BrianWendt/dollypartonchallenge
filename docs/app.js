@@ -1,4 +1,4 @@
-var square = 600;
+var square = 400;
 var images, canvas;
 
 $(document).ready(() => {
@@ -40,12 +40,12 @@ function update_canvas() {
     $('#step2, #step3').show();
     const ctx = canvas.getContext("2d");
     ctx.textAlign = "center";
-    ctx.font = "60px Impact, Anton";
+    ctx.font = "50px Impact, Anton";
     ctx.fillStyle = "#fff";
     ctx.lineWidth = 3;
     ctx.strokeStyle = "#000";
 
-    ctx.fillRect(0, 0, 1200, 1200);
+    ctx.fillRect(0, 0, square * 2, square * 2);
     var valid = true;
     if (images.linkedin) {
         ctx.drawImage(images.linkedin, 0, 0);
@@ -68,19 +68,19 @@ function update_canvas() {
 
     /* Text */
 
-    ctx.fillText("LINKEDIN", 300, 590, square);
-    ctx.strokeText("LINKEDIN", 300, 590, square);
+    ctx.fillText("LINKEDIN", (square/2), square-10, square);
+    ctx.strokeText("LINKEDIN", (square/2), square-10, square);
 
-    ctx.fillText("FACEBOOK", 900, 590, square);
-    ctx.strokeText("FACEBOOK", 900, 590, square);
+    ctx.fillText("FACEBOOK", (square/2) + square, square-10, square);
+    ctx.strokeText("FACEBOOK", (square/2) + square, square-10, square);
 
-    ctx.fillText("INSTAGRAM", 300, 1190, square);
-    ctx.strokeText("INSTAGRAM", 300, 1190, square);
+    ctx.fillText("INSTAGRAM", (square/2), (square*2) - 10, square);
+    ctx.strokeText("INSTAGRAM", (square/2), (square*2) - 10, square);
 
-    ctx.fillText("TINDER", 900, 1190, square);
-    ctx.strokeText("TINDER", 900, 1190, square);
+    ctx.fillText("TINDER", (square/2) + square, (square*2) - 10, square);
+    ctx.strokeText("TINDER", (square/2) + square, (square*2) - 10, square);
 
-    $('#download').attr('href', canvas.toDataURL('image/png'));
+    $('#download').attr('href', canvas.toDataURL('image/png', .8));
 }
 
 
