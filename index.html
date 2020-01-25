@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-146151913-2"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "UA-146151913-2");
+        </script>
+
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+            name="description"
+            content="Generate Dolly Parton challenge image from your pictures."
+        />
+        <meta
+            name="author"
+            content="Brian Wendt /in/brianwendtarizona github.com/BrianWendt"
+        />
+        <title>Free Dolly Parton Challenge Generator</title>
+
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cyborg/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-l7xaoY0cJM4h9xh1RfazbgJVUZvdtyLWPueWNtLAphf/UbBgOVzqbOTogxPwYLHM"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+            rel="stylesheet"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-5WSMKsEjlK1hO/E+0ERtEmsujy8NFgEb15UOB5phg+1xk2zTO0Dd71qJ+7yD1QFN"
+            crossorigin="anonymous"
+        />
+        <link href="app.css" rel="stylesheet" />
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-core.min.js"
+            integrity="sha256-mW00/eBOiaBH33KRpzlnNkZLpRXr+C7OHERIEc98nwQ="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"
+        ></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div id="app" class="container my-3">
+            <h1 class="text-center mb-0">#DollyPartonChallenge</h1>
+            <h2 class="text-center mb-3">
+                Free Dolly Parton Challenge Generator
+            </h2>
+            <p>
+                <a
+                    href="https://www.instagram.com/p/B7l01DEF4HI/"
+                    target="_blank"
+                    >Click Here</a
+                >
+                for the original
+                <a
+                    href="https://twitter.com/hashtag/dollypartonchallenge"
+                    target="_blank"
+                    >#DollyPartonChallenge</a
+                >
+                post
+            </p>
+
+            <h3><small>Step 1.</small> Upload your 4 images</h3>
+            <div class="row">
+                <div class="image col-md-6 mb-3 text-center" id="linkedin">
+                    <label class="btn btn-primary btn-block btn-lg">
+                        <input type="file" accept="image/*" name="linkedin" />
+                        LinkedIn
+                    </label>
+                    <canvas
+                        class="img-fluid"
+                        width="600"
+                        height="600"
+                        id="linkedin-canvas"
+                    ></canvas>
+                </div>
+                <div class="image col-md-6 mb-3 text-center" id="facebook">
+                    <label
+                        class="btn btn-primary btn-block btn-lg"
+                        name="facebook"
+                    >
+                        <input type="file" accept="image/*" name="facebook" />
+                        Facebook
+                    </label>
+                    <canvas
+                        class="img-fluid"
+                        width="600"
+                        height="600"
+                        id="facebook-canvas"
+                    ></canvas>
+                </div>
+                <div class="image col-md-6 mb-3 text-center" id="instagram">
+                    <label class="btn btn-primary btn-block btn-lg">
+                        <input type="file" accept="image/*" name="instagram" />
+                        Instagram
+                    </label>
+                    <canvas
+                        class="img-fluid"
+                        width="600"
+                        height="600"
+                        id="instagram-canvas"
+                    ></canvas>
+                </div>
+                <div class="image col-md-6 mb-3 text-center" id="tinder">
+                    <label class="btn btn-primary btn-block btn-lg">
+                        <input type="file" accept="image/*" name="tinder" />
+                        Tinder
+                    </label>
+                    <canvas
+                        class="img-fluid"
+                        width="600"
+                        height="600"
+                        id="tinder-canvas"
+                    ></canvas>
+                </div>
+            </div>
+
+            <div id="step2" style="display: none;">
+                <h3><small>Step 2.</small> Review</h3>
+                <canvas
+                    id="canvas"
+                    width="1200"
+                    height="1200"
+                    class="img-fluid"
+                    download="dollypartonchallenge.png"
+                ></canvas>
+            </div>
+
+            <div id="step3" style="display: none;">
+                <h3><small>Step 3.</small> Download</h3>
+                <a
+                    href=""
+                    download="dollypartonchallenge.png"
+                    id="download"
+                    class="btn btn-success btn-block btn-lg"
+                    >Download Image</a
+                >
+            </div>
+        </div>
+    </body>
+</html>
